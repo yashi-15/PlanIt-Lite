@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+/* Modern Thin Scrollbar */
+    .modern-thin::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .modern-thin::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 10px;
+    }
+
+    .modern-thin::-webkit-scrollbar-thumb {
+      background: #333030;
+      border-radius: 10px;
+    }
+
+    .modern-thin::-webkit-scrollbar-thumb:hover {
+      background: #433f3f;
+    }
