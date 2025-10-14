@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddTodo = ({todos, setTodos}) => {
+const AddTodo = ({todos ,addTodo}) => {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -14,9 +14,7 @@ const AddTodo = ({todos, setTodos}) => {
             tag,
             completed: false,
         };
-        localStorage.setItem("todos", JSON.stringify([...todos, data]));
-        setTodos(prevTodos => [...prevTodos, data])
-        // todos.push(data);
+        addTodo(data)
         setTitle("");
         setDescription("");
         setTag("");
