@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { RxCross2 } from "react-icons/rx";
 
-const AddTodo = ({todos ,addTodo}) => {
-
+const AddTodo = ({ todos, editMode, setEditMode, addTodo, editTodo }) => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [tag, setTag] = useState("");
@@ -14,26 +14,74 @@ const AddTodo = ({todos ,addTodo}) => {
             tag,
             completed: false,
         };
-        addTodo(data)
+        addTodo(data);
         setTitle("");
         setDescription("");
         setTag("");
     };
 
-    return (
-        <div className="basis-1/3 self-center max-w-md mx-auto">
-            <h1 className="text-violet-300 text-2xl mb-4 text-center">Add New</h1>
-            <div className="flex flex-col gap-2">
-                <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Project PlanIt Lite" className="text-violet-400 border border-gray-500 py-1 px-3 rounded-sm" />
-                <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Add Delete Task feature" className="text-violet-400 border border-gray-500 py-1 px-3 rounded-sm h-28" />
-                <input type="text" name="tag" value={tag} onChange={(e) => setTag(e.target.value)} placeholder="Tag" className="text-violet-400 border border-gray-500 py-1 px-3 rounded-sm" />
-                <button onClick={saveTodo} className="bg-violet-500 py-1 px-2 rounded-full text-gray-100 font-semibold cursor-pointer hover:bg-violet-400 shadow-md shadow-violet-400">
-                    Add
-                </button>
-            </div>
-        </div>
-    );
+    const editSaveTodo = () => {
+        const data = {
+            title,
+            description,
+            tag,
+        };
+        editTodo(data);
+        setTitle("");
+        setDescription("");
+        setTag("");
+    };
 
+    useEffect(() => {
+        if (editMode !== null) {
+            const data = todos.find((todo) => todo.id == editMode);
+            setTitle(data.title);
+            setDescription(data.description);
+            setTag(data.tag);
+        }
+    }, [editMode]);
+
+    return (
+        <>
+            {editMode !== null ? (
+                <div className="basis-1/3 self-center max-w-md mx-auto">
+                    <div className="flex justify-between">
+                        <h1 className="text-violet-300 text-2xl mb-4">Edit Todo</h1>
+                        <div
+                            onClick={() => {
+                                setEditMode(null);
+                                setTitle("");
+                                setDescription("");
+                                setTag("");
+                            }}
+                        >
+                            <RxCross2 color="white" />
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Project PlanIt Lite" className="text-violet-400 border border-gray-500 py-1 px-3 rounded-sm" />
+                        <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Add Delete Task feature" className="text-violet-400 border border-gray-500 py-1 px-3 rounded-sm h-28" />
+                        <input type="text" name="tag" value={tag} onChange={(e) => setTag(e.target.value)} placeholder="Tag" className="text-violet-400 border border-gray-500 py-1 px-3 rounded-sm" />
+                        <button onClick={editSaveTodo} className="bg-violet-500 py-1 px-2 rounded-full text-gray-100 font-semibold cursor-pointer hover:bg-violet-400 shadow-md shadow-violet-400">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            ) : (
+                <div className="basis-1/3 self-center max-w-md mx-auto">
+                    <h1 className="text-violet-300 text-2xl mb-4 text-center">Add New</h1>
+                    <div className="flex flex-col gap-2">
+                        <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Project PlanIt Lite" className="text-violet-400 border border-gray-500 py-1 px-3 rounded-sm" />
+                        <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Add Delete Task feature" className="text-violet-400 border border-gray-500 py-1 px-3 rounded-sm h-28" />
+                        <input type="text" name="tag" value={tag} onChange={(e) => setTag(e.target.value)} placeholder="Tag" className="text-violet-400 border border-gray-500 py-1 px-3 rounded-sm" />
+                        <button onClick={saveTodo} className="bg-violet-500 py-1 px-2 rounded-full text-gray-100 font-semibold cursor-pointer hover:bg-violet-400 shadow-md shadow-violet-400">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            )}
+        </>
+    );
 };
 
 export default AddTodo;
