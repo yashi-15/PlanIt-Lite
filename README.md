@@ -1,16 +1,71 @@
-# React + Vite
+# 🗓️ Day 1–3 To-Do App Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and elegant **To-Do List App** built with **React**, created as part of a coding practice challenge.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📅 Project Timeline
 
-## React Compiler
+### **Day 1: Basic Setup**
+- ✅ Set up React app  
+- ✅ Created input field and “Add Task” button  
+- ✅ Displayed added tasks in a task list  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### **Day 2: Core Functionality**
+- ✅ Added **Complete** , **Delete**, **Edit**  functionality for each task  
+- ✅ Stored tasks persistently using **localStorage**  
+- 🎨 Polished the **UI** for better user experience  
 
-## Expanding the ESLint configuration
+### **Day 3: Optional Enhancements**
+- ✨ Added **Filter** and **Sort** features.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React (Vite / CRA)  
+- **Storage:** localStorage  
+- **Deployment:** Vercel  
+- **Styling:** CSS / Tailwind / Custom styles  
+
+---
+
+## ⚡ Features
+
+- Add new tasks easily  
+- Mark tasks as **complete** or **delete** them  
+- Tasks are saved in browser’s **localStorage**  
+- Optional: Filter tasks (All / Completed / Pending)  
+- Optional: Edit existing tasks  
+- Clean and minimal **UI design**  
+- Smooth **animations** for better UX  
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/yashi-15/PlanIt-Lite.git
+```
+
+### 2️⃣ Install dependencies
+```bash
+npm install
+```
+
+### 3️⃣ Run the app locally
+```bash
+npm run dev
+```
+
+
+## 🧠 Learnings
+
+- Refreshed React fundamentals (state, props, components)
+- Improved understanding of localStorage persistence
+- Practiced building and deploying a complete mini-project
+- Enhanced UI polishing and animation handling
+
+## 👩‍💻 Author
+Yashi Sharma
