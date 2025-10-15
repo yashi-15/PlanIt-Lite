@@ -1,19 +1,3 @@
-
-### **Day 1: Basic Setup**
-- ✅ Set up React app  
-- ✅ Created input field and “Add Task” button  
-- ✅ Displayed added tasks in a task list  
-
-### **Day 2: Core Functionality**
-- ✅ Added **Complete** , **Delete**, **Edit**  functionality for each task  
-- ✅ Stored tasks persistently using **localStorage**  
-- 🎨 Polished the **UI** for better user experience  
-
-### **Day 3: Optional Enhancements**
-- ✨ Added **Filter** and **Sort** features.
-
----
-
 ## 🛠️ Tech Stack
 
 - **Frontend:** React (Vite / CRA)  
