@@ -1,10 +1,3 @@
-# 🗓️ Day 1–3 To-Do App Project
-
-A simple and elegant **To-Do List App** built with **React**, created as part of a coding practice challenge.
-
----
-
-## 📅 Project Timeline
 
 ### **Day 1: Basic Setup**
 - ✅ Set up React app  
