@@ -12,10 +12,9 @@
 - Add new tasks easily  
 - Mark tasks as **complete** or **delete** them  
 - Tasks are saved in browser’s **localStorage**  
-- Optional: Filter tasks (All / Completed / Pending)  
-- Optional: Edit existing tasks  
+- Filter tasks (All / Completed / Pending)  , Sort tasks
+- Edit existing tasks  
 - Clean and minimal **UI design**  
-- Smooth **animations** for better UX  
 
 ---
 
